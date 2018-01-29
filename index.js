@@ -1,6 +1,7 @@
 var css = require('sheetify')
 var choo = require('choo')
-var store = require('./stores/clicks')
+var inputStore = require('./stores/input')
+var outputStore  = require('./stores/output')
 
 css('tachyons')
 
@@ -9,7 +10,8 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(require('choo-devtools')())
 }
 
-app.use(store)
+app.use(inputStore)
+app.use(outputStore)
 
 app.route('/', require('./views/main'))
 app.route('/*', require('./views/404'))
