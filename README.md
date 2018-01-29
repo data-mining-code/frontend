@@ -1,6 +1,6 @@
 # frontend
 
-A small Choo-based frontend app that communicates with the broker and displays
+A small [Choo]-based frontend app that communicates with the broker and displays
 results, as well as accepting inputs.
 
 ## Installation
@@ -28,3 +28,5 @@ npm start
 ## License
 
 AGPL 3.0+ (see [LICENSE](./LICENSE))
+
+[Choo]: http://choo.io
