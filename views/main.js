@@ -1,6 +1,6 @@
-var html = require('choo/html')
+const html = require('choo/html')
 
-var TITLE = '🚂🚋🚋'
+const TITLE = '🚂🚋🚋'
 
 module.exports = view
 
@@ -28,8 +28,4 @@ function view (state, emit) {
       </header>
     </body>
   `
-
-  function handleClick () {
-    emit('clicks:add', 1)
-  }
 }
