@@ -1,6 +1,6 @@
 {
-  "name": "frontend",
-  "short_name": "frontend",
+  "name": "Data Mining Frontend",
+  "short_name": "dmfrontend",
   "description": "A very cute app",
   "start_url": "/",
   "display": "standalone",
