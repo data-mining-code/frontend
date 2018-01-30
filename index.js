@@ -1,7 +1,7 @@
 const css = require('sheetify')
 const choo = require('choo')
 const inputStore = require('./stores/input')
-const outputStore  = require('./stores/output')
+const outputStore = require('./stores/output')
 
 css('tachyons')
 
