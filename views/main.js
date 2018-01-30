@@ -20,8 +20,9 @@ function view (state, emit) {
         <div class="dtc v-mid cover ph3 ph4-m ph5-l">
           <h1 class="f2 f-subheadline-l mt0 measure lh-title fw9">${state.output.text}</h1>
           <input
-            class="f3 helvetica bg-light-pink bt-0 bl-0 br-0 bb b--white-40 black"
+            class="f3 f2-l helvetica bg-light-pink bt-0 bl-0 br-0 bb b--white-40 navy pb2 vw-100"
             placeholder="Ask me a question..."
+            autofocus
             onkeyup=${onsubmit}
           />
         </div>
