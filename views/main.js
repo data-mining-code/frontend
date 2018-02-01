@@ -10,7 +10,6 @@ function view (state, emit) {
   function onsubmit (evt) {
     if (evt.key === 'Enter') {
       emit('input:submit', evt.target.value)
-      emit('output:submit', state.input.text)
     }
   }
 
