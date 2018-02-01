@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "bankai build index.js",
-    "inspect": "bankai inspect index.js",
-    "start": "bankai start index.js -q",
-    "test": "standard && npm run test-deps",
-    "test-deps": "dependency-check . && dependency-check . --extra --no-dev -i tachyons"
+    "build": "browserify -o dist/bundle.js -t sheetify index.js",
+    "start": "concurrently 'watchify -o dist/bundle.js -t sheetify index.js' 'serve dist -p 8080'",
+    "test": "standard | snazzy"
   },
   "dependencies": {
     "choo": "6.6.1",
@@ -16,8 +14,11 @@
     "tachyons": "4.9.1"
   },
   "devDependencies": {
-    "bankai": "9.2.0",
-    "dependency-check": "2.9.2",
-    "standard": "10.0.3"
+    "browserify": "15.2.0",
+    "concurrently": "3.5.1",
+    "serve": "6.4.9",
+    "snazzy": "7.0.0",
+    "standard": "10.0.3",
+    "watchify": "3.10.0"
   }
 }
