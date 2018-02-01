@@ -1,4 +1,5 @@
 const html = require('choo/html')
+const fetch = window.fetch
 
 const TITLE = '🚂🚋🚋'
 
@@ -10,6 +11,11 @@ function view (state, emit) {
   function onsubmit (evt) {
     if (evt.key === 'Enter') {
       emit('input:submit', evt.target.value)
+      fetch('http://localhost:3030/api/request')
+        .then(res => res.json())
+        .then(body => {
+          emit('output:submit', body.text)
+        })
     }
   }
 
