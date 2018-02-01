@@ -11,12 +11,8 @@ module.exports = function (state, emitter) {
     state.input.text = input
 
     fetch('http://localhost:3030/api/request')
-      .then(res => {
-        console.log(res)
-        return res.json()
-      })
+      .then(res => res.json())
       .then(body => {
-        console.log(body)
         emitter.emit('output:submit', body.text)
       })
   })
