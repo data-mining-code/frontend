@@ -11,7 +11,7 @@ function view (state, emit) {
   function onsubmit (evt) {
     if (evt.key === 'Enter') {
       emit('input:submit', evt.target.value)
-      fetch(`http://localhost:3030/api/request?input=${state.input.text}`)
+      fetch(`http://${process.env.HOSTNAME}:3030/api/request?input=${state.input.text}`)
         .then(res => res.json())
         .then(body => {
           emit('output:submit', body.text)
