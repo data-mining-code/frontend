@@ -1,5 +1,4 @@
 const html = require('choo/html')
-const fetch = window.fetch
 
 const Input = require('../components/input')
 const input = new Input()
