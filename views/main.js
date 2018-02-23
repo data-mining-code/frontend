@@ -1,7 +1,7 @@
 const html = require('choo/html')
 const fetch = window.fetch
 
-const TITLE = '🚂🚋🚋'
+const TITLE = 'data mining chatbot'
 
 module.exports = view
 
