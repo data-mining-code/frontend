@@ -2,16 +2,17 @@ const Component = require('nanocomponent')
 const html = require('choo/html')
 
 class Input extends Component {
-  constructor () {
+  constructor (emit) {
     super()
-    this.input = ''
+    this.emit = emit
+
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  createElement (input) {
-    this.input = input.text
+  createElement () {
     return html`
       <input
-         class="f3 f2-l helvetica bt-0 bl-0 br-0 bb b--navy navy pb2 vw-100"
+         class="f3 f2-l helvetica bt-0 bl-0 br-0 bb b--navy navy pb2 w-100"
          placeholder="ask me something"
          autofocus
          onkeyup=${this.handleSubmit}
@@ -19,8 +20,14 @@ class Input extends Component {
     `
   }
 
-  update (input) {
-    return this.input !== input.text
+  handleSubmit (evt) {
+    if (evt.key === 'Enter') {
+      this.emit('messages:add', {
+        text: evt.target.value,
+        response: false
+      })
+      this.emit('render')
+    }
   }
 }
 
