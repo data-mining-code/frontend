@@ -1,5 +1,6 @@
 const Component = require('nanocomponent')
 const html = require('choo/html')
+const fetch = window.fetch
 
 class Input extends Component {
   constructor (emit) {
@@ -26,7 +27,14 @@ class Input extends Component {
         text: evt.target.value,
         response: false
       })
-      this.emit('render')
+      fetch(`http://${process.env.HOSTNAME}:3030/api/request?input=${evt.target.value}`)
+        .then(res => res.json())
+        .then(body => {
+          emit('messages:add', {
+            text: body.text,
+            response: true
+          })
+        })
     }
   }
 }

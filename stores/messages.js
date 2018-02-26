@@ -3,5 +3,6 @@ module.exports = function (state, emitter) {
 
   emitter.on('messages:add', message => {
     state.messages.push(message)
+    emitter.emit('render')
   })
 }
