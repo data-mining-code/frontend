@@ -16,7 +16,7 @@ class Message extends Component {
         ${this.text}
       </div>
     `
-  } 
+  }
 
   update (text) {
     return this.text !== text
