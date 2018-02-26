@@ -30,7 +30,7 @@ class Input extends Component {
       fetch(`http://${process.env.HOSTNAME}:3030/api/request?input=${evt.target.value}`)
         .then(res => res.json())
         .then(body => {
-          emit('messages:add', {
+          this.emit('messages:add', {
             text: body.text,
             response: true
           })
