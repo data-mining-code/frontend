@@ -11,8 +11,14 @@ class Message extends Component {
   createElement (config) {
     this.text = config.text
     this.response = config.response
+    let classNames
+    if (this.response) {
+      classNames = 'mr-auto bg-silver'
+    } else {
+      classNames = 'ml-auto white bg-blue'
+    }
     return html`
-      <div class="ml-auto">
+      <div class="w-20 mb3 ph3 pv4 tc br2 ${classNames}">
         ${this.text}
       </div>
     `

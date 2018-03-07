@@ -12,7 +12,7 @@ function view (state, emit) {
   const input = new Input(emit)
 
   return html`
-    <body> 
+    <body>
       <div class="helvetica mw5 mw7-ns center bg-light-gray pa3 pa5-ns vh-100">
         ${state.messages.map(msg => {
           const message = new Message()
@@ -22,7 +22,7 @@ function view (state, emit) {
         })}
       </div>
 
-      <div class="fixed mw5 mw7-ns center pb4" style="bottom:0;left:37vw;">
+      <div class="fixed center pb4" style="bottom:0;left:37vw;">
         ${input.render()}
       </div>
     </body>
