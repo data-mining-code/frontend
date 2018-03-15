@@ -9,11 +9,11 @@ module.exports = view
 
 function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
-  const input = new Input(emit)
+  const input = new Input(state, emit)
 
   return html`
-    <body>
-      <div class="helvetica mw5 mw7-ns center bg-light-gray pa3 pa5-ns vh-100">
+    <body style="background-color: #33578e">
+      <div class="helvetica f3 mw5 mw7-ns center bg-light-gray pa3 pa5-ns vh-100">
         ${state.messages.map(msg => {
           const message = new Message()
           return html`
@@ -22,7 +22,7 @@ function view (state, emit) {
         })}
       </div>
 
-      <div class="fixed center pb4" style="bottom:0;left:37vw;">
+      <div class="fixed center f3 pb4" style="bottom:0;left: 0;right: 0; width: 31%">
         ${input.render()}
       </div>
     </body>
