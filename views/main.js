@@ -2,6 +2,7 @@ const html = require('choo/html')
 
 const Input = require('../components/input')
 const Message = require('../components/message')
+const Help = require('../components/help')
 
 const TITLE = 'data mining chatbot'
 
@@ -10,9 +11,16 @@ module.exports = view
 function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
   const input = new Input(state, emit)
+  const help = new Help(state, emit)
 
   return html`
     <body style="background-color: #33578e">
+    <nav class="helvetica" style="background-color: #FFFFFF; height: 20%; display: flex; flex-direction: row;"> 
+      Metroid
+      <button onclick=${help.render()}>Help</button>
+      <button>Contact</button>
+      <button>End Session</button>
+    </nav>
       <div class="helvetica f3 mw5 mw7-ns center bg-light-gray pa3 pa5-ns vh-100">
         ${state.messages.map(msg => {
           const message = new Message()
