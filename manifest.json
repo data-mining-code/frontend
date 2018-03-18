@@ -1,7 +1,7 @@
 {
   "name": "Data Mining Frontend",
   "short_name": "dmfrontend",
-  "description": "A very cute app",
+  "description": "Chatbot frontend",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffc0cb",

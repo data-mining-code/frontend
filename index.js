@@ -13,6 +13,7 @@ app.use(messagesStore)
 
 app.route('/', require('./views/main'))
 app.route('/*', require('./views/404'))
+app.route('/index.html', require('./views/main'))
 
 if (!module.parent) app.mount('body')
 else module.exports = app
