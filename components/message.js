@@ -18,15 +18,15 @@ class Message extends Component {
     let after_element_border
     if (this.response) {
       classNames = 'mr-auto bg-silver'
-      style = 'background-color: #ffed00;' 
+      style = 'background-color: rgba(75,250,75,.8);' 
       after_element_border = 'border-width:20px 20px 0 0;'
-      after_element_color = 'border-color: #ffed00 transparent;' 
+      after_element_color = 'border-color: rgba(75,250,75,.8) transparent;' 
       after_element_left = 'left: 4%;'
     } else {
-      classNames = 'ml-auto white bg-blue'
-      style = 'background-color: #00245b;'
+      classNames = 'ml-auto bg-blue'
+      style = 'background-color: rgba(250,75,40,.8);'
       after_element_border = 'border-width:20px 0 0 20px;'
-      after_element_color = 'border-color: #00245b transparent;' 
+      after_element_color = 'border-color: rgba(250,75,40,.8) transparent;' 
       after_element_left = 'left: 96%;'
     }
     return html`
